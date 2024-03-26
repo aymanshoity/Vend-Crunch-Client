@@ -1,0 +1,338 @@
+{
+  "products":[
+    {
+      "productName": "Kurkure Cream & Onion ",
+      "amount": "37 gm",
+      "quantity": 10,
+      "category": "Chips",
+      "price": 25,
+      "brandName": "KurKure",
+      "imageURL": "https://i.ibb.co/0qZShv8/kurkure1.png"
+    },
+    {
+      "productName": "Kurkure Chilli Chatka ",
+      "amount": "37 gm",
+      "quantity": 10,
+      "category": "Chips",
+      "price": 25,
+      "brandName": "KurKure",
+      "imageURL": "https://i.ibb.co/QDNSKBK/kurkure2.png"
+    },
+    {
+      "productName": "Kurkure Massala Munch ",
+      "amount": "37 gm",
+      "quantity": 10,
+      "category": "Chips",
+      "price": 25,
+      "brandName": "KurKure",
+      "imageURL": "https://i.ibb.co/dm5CRp6/kurkure3.png"
+    },
+    {
+      "productName": "Kurkure Naughty Tomato ",
+      "amount": "37 gm",
+      "quantity": 10,
+      "category": "Chips",
+      "price": 25,
+      "brandName": "KurKure",
+      "imageURL": "https://i.ibb.co/7jyDhJb/kurkure4.png"
+    },
+    {
+      "productName": "Mr. Twist",
+      "amount": "25 gm",
+      "quantity": 10,
+      "category": "Chips",
+      "price": 20,
+      "brandName": "Bombay Sweets",
+      "imageURL": "https://i.ibb.co/R7mXqbM/mrTwist.png"
+    },
+    {
+      "productName": "Ruchi BBQ Potato Crackers",
+      "amount": "25 gm",
+      "quantity": 10,
+      "category": "Chips",
+      "price": 15,
+      "brandName": "Ruchi",
+      "imageURL": "https://i.ibb.co/0nLmjCQ/ruchi1.png"
+    },
+    {
+      "productName": "Ruchi Thai Chilli Potato Crackers",
+      "amount": "25 gm",
+      "quantity": 10,
+      "category": "Chips",
+      "price": 15,
+      "brandName": "Ruchi",
+      "imageURL": "https://i.ibb.co/JBHrpbJ/ruchi2.png"
+    },
+   
+   
+    {
+      "productName": "Bangas Grand Choice Salted Biscuit",
+      "amount": "70g",
+      "quantity": 12,
+      "category": "Biscuits",
+      "price": 20,
+      "brandName": "Bangas",
+      "imageURL": "https://i.ibb.co/n8CJ8PP/biscuit7.png"
+    },
+    {
+      "productName": "Olympic Tim Tim Orange Biscuit",
+      "amount": "40g",
+      "quantity": 8,
+      "category": "Biscuits",
+      "price": 10,
+      "brandName": "Olympic ",
+      "imageURL": "https://i.ibb.co/7VL4334/biscuit4.png"
+    },
+    {
+      "productName": "Pran Potata Spicy Biscuit",
+      "amount": "100g",
+      "quantity": 12,
+      "category": "Biscuits",
+      "price": 30,
+      "brandName": "Pran  ",
+      "imageURL": "https://i.ibb.co/SmpmQwf/biscuit5.png"
+    },
+    {
+      "productName": "Haque Milk Chocolate Digestive Biscuit",
+      "amount": "137g",
+      "quantity": 12,
+      "category": "Biscuits",
+      "price": 40,
+      "brandName": "Haque ",
+      "imageURL": "https://i.ibb.co/1skwc9N/biscuit6.png"
+    },
+    {
+      "productName": "Haque Mr. Cookie Butter Coconut Biscuit",
+      "amount": "39g",
+      "quantity": 12,
+      "category": "Biscuits",
+      "price": 10,
+      "brandName": "Haque ",
+      "imageURL": "https://i.ibb.co/S71pdsz/biscuit3.png"
+    },
+    {
+      "productName": "Olympic Energy Plus Biscuits",
+      "amount": "62g",
+      "quantity": 12,
+      "category": "Biscuits",
+      "price": 15,
+      "brandName": "Olympic",
+      "imageURL": "https://i.ibb.co/GCbZ3VR/biscuit1.png"
+    },
+    {
+      "productName": "Olympic Nutty Real Peanut Biscuit",
+      "amount": "50g",
+      "quantity": 12,
+      "category": "Biscuits",
+      "price": 15,
+      "brandName": "Olympic",
+      "imageURL": "https://i.ibb.co/WnkL5PS/biscuit2.png"
+    },
+    
+    {
+      "productName": "Pran Peanut Bar",
+      "amount": "25g",
+      "quantity": 15,
+      "category": "CandyBar",
+      "price": 10,
+      "brandName": "Pran",
+      "imageURL": "https://i.ibb.co/HdHvHMF/0073937-pran-peanut-bar-25gm.jpg"
+    },
+    {
+      "productName": "Snickers",
+      "amount": "50g",
+      "quantity": 15,
+      "category": "CandyBar",
+      "price": 60,
+      "brandName": "Nestle",
+      "imageURL": "https://i.ibb.co/Bn0wwFD/bar2.png"
+    },
+    {
+      "productName": "Mars",
+      "amount": "51g",
+      "quantity": 15,
+      "category": "CandyBar",
+      "price": 60,
+      "brandName": "ChocoCrave",
+      "imageURL": "https://i.ibb.co/RpbNV04/bar6.png"
+    },
+    {
+      "productName": "Pran Mango Bar",
+      "amount": "30 pcs",
+      "quantity": 15,
+      "category": "CandyBar",
+      "price": 300,
+      "brandName": "Pran",
+      "imageURL": "https://i.ibb.co/XX3FLH3/bar5.png"
+    },
+    {
+      "productName": "Kitkat",
+      "amount": "18 gm",
+      "quantity": 15,
+      "category": "CandyBar",
+      "price": 40,
+      "brandName": "Nestle",
+      "imageURL": "https://i.ibb.co/MMCgP0m/bar3.png"
+    },
+    {
+      "productName": "Cadbury 5 Star Chocolate",
+      "amount": "22 gm",
+      "quantity": 15,
+      "category": "CandyBar",
+      "price": 40,
+      "brandName": "Cadbury",
+      "imageURL": "https://i.ibb.co/56zS3HD/bar1.png"
+    },
+    {
+      "productName": "Munchee Chunky Choc",
+      "amount": "16 pcs",
+      "quantity": 15,
+      "category": "CandyBar",
+      "price": 240,
+      "brandName": "Munchee",
+      "imageURL": "https://i.ibb.co/6wBCJDm/bar4.png"
+    },
+    {
+        "productName": "Ruchi Chanachur Bar-B-Q",
+        "amount": "22 gm",
+        "quantity": 8,
+        "category": "Snacks",
+        "price": 10,
+        "brandName": "Ruchi",
+        "imageURL": "https://i.ibb.co/0r1btTP/snacks1.png"
+      },
+    {
+        "productName": "Ruchi Chanachur Jhal",
+        "amount": "22 gm",
+        "quantity": 8,
+        "category": "Snacks",
+        "price": 10,
+        "brandName": "Ruchi",
+        "imageURL": "https://i.ibb.co/J2SrfzR/snacks3.png"
+      },
+    {
+        "productName": "Mr. Noodles Cup Noodles Magic Masala",
+        "amount": "40 gm",
+        "quantity": 8,
+        "category": "Snacks",
+        "price": 30,
+        "brandName": "Mr. Noodles",
+        "imageURL": "https://i.ibb.co/v4nGbqb/snacks2.png"
+      },
+    {
+        "productName": "Tiffany Crunch 'n' Cream Strawberry Wafers",
+        "amount": "76 gm",
+        "quantity": 8,
+        "category": "Snacks",
+        "price": 180,
+        "brandName": "Tiffany",
+        "imageURL": "https://i.ibb.co/1skBcpB/snacks4.png"
+      },
+    {
+        "productName": "Dan Cake Chocolate Plain Cake",
+        "amount": "150 gm",
+        "quantity": 8,
+        "category": "Snacks",
+        "price": 80,
+        "brandName": "Dan Cake ",
+        "imageURL": "https://i.ibb.co/SmJ8KhB/snacks5.png"
+      },
+    {
+        "productName": "Dan Cake Vanilla Plain Cake",
+        "amount": "150 gm",
+        "quantity": 8,
+        "category": "Snacks",
+        "price": 70,
+        "brandName": "Dan Cake ",
+        "imageURL": "https://i.ibb.co/Jn47GQF/snacks6.png"
+      },
+      {
+        "productName": "Aarong Dairy Chocolate Milk Drink UHT ",
+        "amount": "200ml",
+        "quantity": 6,
+        "category": "Drinks",
+        "price": 30,
+        "brandName": "Aarong",
+        "imageURL": "https://i.ibb.co/nrLQq1V/drinks1.png"
+      },
+      {
+        "productName": "Coca-Cola",
+        "amount": "600ml",
+        "quantity": 6,
+        "category": "Drinks",
+        "price": 50,
+        "brandName": "Coca-Cola",
+        "imageURL": "https://i.ibb.co/2yJmLY3/drinks2.png"
+      },
+      {
+        "productName": "Pran Drinko Litchi Juice",
+        "amount": "250ml",
+        "quantity": 6,
+        "category": "Drinks",
+        "price": 30,
+        "brandName": "Pran",
+        "imageURL": "https://i.ibb.co/v1TXSFG/drinks3.png"
+      },
+      {
+        "productName": "Mum Drinking Water",
+        "amount": "500ml",
+        "quantity": 6,
+        "category": "Drinks",
+        "price": 20,
+        "brandName": "Mum",
+        "imageURL": "https://i.ibb.co/PYBRD3Z/drinks4.png"
+      },
+      {
+        "productName": "Sprite",
+        "amount": "500ml",
+        "quantity": 6,
+        "category": "Drinks",
+        "price": 40,
+        "brandName": "Sprite",
+        "imageURL": "https://i.ibb.co/x8ZpfYH/drinks5.png"
+      },
+      {
+        "productName": "Pran Frooto Mango Fruit Drink",
+        "amount": "250ml",
+        "quantity": 6,
+        "category": "Drinks",
+        "price": 25,
+        "brandName": "Pran",
+        "imageURL": "https://i.ibb.co/GRsXyPJ/drinks6.png"
+      },
+      {
+        "productName": "RC Q Lemon Pet",
+        "amount": "250ml",
+        "quantity": 6,
+        "category": "Drinks",
+        "price": 25,
+        "brandName": "RC",
+        "imageURL": "https://i.ibb.co/86R35VL/drinks7.png"
+      }
+  ]
+  
+
+
+
+
+
+
+  
+  
+ 
+  
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+}
