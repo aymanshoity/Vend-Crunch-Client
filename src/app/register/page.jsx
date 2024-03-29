@@ -1,11 +1,12 @@
 
+import Register from "@/components/ui/Register/Register";
 
-const Register = () => {
+const register = () => {
     return (
-        <div>
-            <h1>This is register page</h1>
+        <div >
+           <Register></Register> 
         </div>
     );
 };
 
-export default Register;
+export default register;

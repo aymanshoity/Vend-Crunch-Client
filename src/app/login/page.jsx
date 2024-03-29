@@ -1,11 +1,12 @@
-import React from 'react';
+import Login from "@/components/ui/Login/Login";
 
-const Login = () => {
+
+const login = () => {
     return (
         <div>
-           <h1>this is login page</h1> 
+           <Login></Login>
         </div>
     );
 };
 
-export default Login;
+export default login;

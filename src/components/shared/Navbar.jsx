@@ -1,36 +1,39 @@
 "use client"
 
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+    const router=usePathname()
+    const [isActive, setIsActive] = useState('');
 
-    const navLinks = 
-        <>
-            <Link href='/' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#c07ccaff] mr-4' : ' text-xl text-white  font-bold  mr-4')}>Home</Link>
-            <Link href='/addProduct' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#c07ccaff] mr-4' : ' text-xl text-white  font-bold  mr-4')}>Add Product</Link>
-            <Link href='/myBag' className={({ isActive }) => (isActive ? ' text-xl font-bold  text-[#c07ccaff] mr-4' : ' text-xl text-white  font-bold  mr-4')}>My Bag</Link>
-        </>
+    useEffect(()=>{
+        setIsActive(router)
+    },[router])
+
+    const dashMenu=<>
+    <li  className={isActive==='/dashboard/products/allProducts' ? '   bg-[#c07ccaff] text-white mr-4' : ' text-white mr-4'}><Link href='/dashboard/products/allProducts'>Products</Link></li>
+    <li className={isActive==='/dashboard/myBag' ? '   bg-[#c07ccaff] text-white mr-4' : ' text-white mr-4'}><Link href='/dashboard/myBag'>My Bag</Link></li>
+    <li className={isActive==='/dashboard/paymentHistory' ? '   bg-[#c07ccaff] text-white mr-4' : 'text-white  mr-4'}><Link href='/dashboard/paymentHistory'>Payment History</Link></li>
+    <li className={isActive==='/dashboard/myOffer' ? '   bg-[#c07ccaff] text-white mr-4' : 'text-white  mr-4'}><Link href='/dashboard/myOffer'>My Offer</Link></li>
+    <li className={isActive==='/dashboard/studentProfile' ? '   bg-[#c07ccaff] text-white mr-4' : ' text-white mr-4'}><Link href='/dashboard/studentProfile'>My Profile</Link></li>
+    <li className={isActive ==='/dashboard/myLoan' ? '   bg-[#c07ccaff] text-white mr-4' : 'text-white  mr-4'}><Link href='/dashboard/myLoan'>My Loan</Link></li>
+    
+    </>
     
     return (
-        <div className="navbar bg-[#412262ff]">
-            <div className="navbar-start  text-white meri">
-                <div className="dropdown bg-[#412262ff]">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        <div className='p-4 w-80 min-h-full bg-[#412262ff]'>
+                    <div className="flex flex-col items-center">
+                        <Image className='bg-white rounded-full' src="https://i.ibb.co/C6pbtVv/Pngtree-hand-drawn-a-bunch-of-4375898.png" width={100} height={100} priority alt="logo" />
+                        <h1 className='text-2xl text-white meri'>Vend Cruch</h1>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#412262ff] rounded-box w-52">
-                        {navLinks}
+                    <ul className="menu  text-white">
+                        {/* Sidebar content here */}
+                       {dashMenu}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl text-white meri">Vend Crunch</a>
-            </div>
-            <div className="navbar-end hidden lg:flex text-white meri">
-                <ul className="menu menu-horizontal px-1">
-                    {navLinks}
-                </ul>
-            </div>
-
-        </div>
     );
 };
 
