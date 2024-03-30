@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { usePathname } from 'next/navigation';
 import UseAxiosPublic from '@/components/Hooks/UseAxiosPublic';
 import { AuthContext } from '@/Provider/Provider';
+import { useQuery } from '@tanstack/react-query';
 
 const ProductCard =() => {
     const {user}=useContext(AuthContext)
@@ -15,16 +16,24 @@ const ProductCard =() => {
     // console.log(pathname)
     const extractedCategory=pathname.split('/').pop();
     // console.log(extractedCategory)
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await AllCategories(extractedCategory);
-            setData(result);
-        };
+    const { data: category, refetch } = useQuery({
+        queryKey: ['category'],
+        queryFn: async () => {
+            const res = await axiosPublic.get(`/products/${extractedCategory}`)
+            console.log(res.data)
+            return res.data
+        }
+    })
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const result = await AllCategories(extractedCategory);
+    //         setData(result);
+    //     };
 
-        fetchData();
-    }, [extractedCategory]);
+    //     fetchData();
+    // }, [extractedCategory]);
     
     // console.log(data.length)
 
@@ -73,10 +82,10 @@ const ProductCard =() => {
     return (
         <div>
             
-            <h1 className="text-center my-10">{extractedCategory}: {data.length}</h1>
+            {/* <h1 className="text-center my-10">{extractedCategory}: {category.length}</h1> */}
             <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
                 {
-                    data.map(product => (
+                    category?.map(product => (
                         <div key={product?._id} className="card flex md:flex-col flex-row-reverse items-center justify-center bg-white border-t-4 border-[#c07ccaff] shadow-xl ">
                             <div className="flex flex-col items-center ">
                             <figure className='h-[250px]' ><Image  height={150} width={100} src={product.imageURL} alt="Shoes" /></figure>
