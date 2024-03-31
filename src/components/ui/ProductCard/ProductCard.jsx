@@ -1,6 +1,6 @@
 "use client"
 import  { useContext, useEffect, useState } from 'react';
-import { AllCategories } from "@/utils/getAllCategories";
+import { AllCategories } from "@/components/utils/getAllCategories";
 import Image from "next/image";
 import Swal from 'sweetalert2'
 import { usePathname } from 'next/navigation';
