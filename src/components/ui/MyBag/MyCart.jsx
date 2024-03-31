@@ -53,7 +53,7 @@ const MyCart = () => {
                 axiosPublic.delete(`/cart/${id}`)
                     .then(res => {
                         console.log(res.data)
-                        if (res.data.modifiedCount > 0) {
+                        if (res.data.deletedCount> 0) {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your file has been deleted.",

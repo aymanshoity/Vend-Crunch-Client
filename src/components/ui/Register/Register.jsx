@@ -42,6 +42,7 @@ const Register = () => {
                                     router.push('/login')
 
                                 } else {
+                                    Swal.fire("User Already Exists..Please go for login");
                                     setError('User Already Exists..Please go for login')
                                 }
                             })

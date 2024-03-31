@@ -5,6 +5,7 @@ import Image from "next/image";
 import PersonIcon from '@mui/icons-material/Person';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Swal from 'sweetalert2'
 const ManageCustomer = () => {
     const axiosSecure = UseAxiosSecure()
     const { data: users, refetch } = useQuery({
@@ -17,6 +18,71 @@ const ManageCustomer = () => {
     })
 
     console.log(users)
+
+    const handleMakeAdmin = (id) => {
+        console.log(id)
+        const data = {
+            role: 'admin'
+        }
+        Swal.fire({
+            title: "Are you sure you want to make him/her admin?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Make!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.patch(`/users/${id}`, data)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.modifiedCount > 0) {
+                            Swal.fire({
+                                title: "Made!",
+                                text: "User has been an Admin.",
+                                icon: "success"
+                            });
+                            refetch()
+                        }
+                    })
+
+            }
+        });
+    }
+
+    const handleDeleteUser = (id) => {
+        console.log(id)
+        Swal.fire({
+            title: "Are you sure you want to delete the user?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/users/${id}`)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            refetch()
+                        }
+                    })
+
+            }
+        });
+    }
+    const handlePressAdmin = (name) => {
+        console.log(name)
+        Swal.fire(`${name} is already Admin`);
+    }
     return (
         <div>
             <div className="overflow-x-auto">
@@ -25,7 +91,7 @@ const ManageCustomer = () => {
                         <tr className="bg-[#412262ff] text-white">
                             <th className="py-4 px-6 text-lg text-left border-b">Image</th>
                             <th className="py-4 px-6 text-lg text-left border-b">Name</th>
-                            <th className="py-4 px-6 text-lg text-left border-b">email</th>
+                            <th className="py-4 px-6 text-lg text-left border-b">Email</th>
                             <th className="py-4 px-6 text-lg text-left border-b">ID</th>
                             <th className="py-4 px-6 text-lg border-b text-end">Make Admin</th>
                             <th className="py-4 px-6 text-lg border-b text-end">Delete</th>
@@ -43,17 +109,26 @@ const ManageCustomer = () => {
                                     <td className="py-4 px-6 border-b text-lg font-medium">{user?.userEmail}</td>
                                     <td className="py-4 px-6 border-b text-lg font-medium">{user?.userID}</td>
                                     <td className="py-4 px-6 border-b text-end">
-                                        <button className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
-                                            {
-                                                user.role === 'student' && <PersonIcon />
-                                            }
-                                            {
-                                                user.role === 'admin' && <AdminPanelSettingsIcon />
-                                            }
-                                        </button>
+                                        {
+                                            user.role === 'student' &&
+
+                                            <button onClick={() => handleMakeAdmin(user?._id)} className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
+                                                <PersonIcon />
+                                            </button>
+
+                                        }
+                                        {
+
+                                            user.role === 'admin' &&
+
+                                            <button onClick={() => handlePressAdmin(user?.userName)} className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
+                                                <AdminPanelSettingsIcon />
+                                            </button>
+
+                                        }
                                     </td>
                                     <td className="py-4 px-6 border-b text-end">
-                                        <button className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
+                                        <button onClick={() => handleDeleteUser(user?._id)} className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
                                             <DeleteIcon />
                                         </button>
                                     </td>
@@ -87,15 +162,24 @@ const ManageCustomer = () => {
 
                                         <span className="font-bold">Make Admin</span>
                                         <span>
+                                            {
+                                                user.role === 'student' &&
 
-                                            <button className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
-                                                {
-                                                    user.role === 'student' && <PersonIcon />
-                                                }
-                                                {
-                                                    user.role === 'admin' && <AdminPanelSettingsIcon />
-                                                }
-                                            </button>
+                                                <button onClick={() => handleMakeAdmin(user?._id)} className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
+                                                    <PersonIcon />
+                                                </button>
+
+                                            }
+                                            {
+
+                                                user.role === 'admin' &&
+
+                                                <button onClick={() => handlePressAdmin(user?.userName)} className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
+                                                    <AdminPanelSettingsIcon />
+                                                </button>
+
+                                            }
+
                                         </span>
 
                                     </div>
@@ -103,7 +187,7 @@ const ManageCustomer = () => {
 
                                         <span className="font-bold">Delete</span>
                                         <span>
-                                            <button className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
+                                            <button onClick={() => handleDeleteUser(user?._id)} className="bg-[#412262ff] hover:scale-110 scale-100 transition-all duration-100 text-white py-2 px-4 rounded-md">
                                                 <DeleteIcon />
                                             </button>
 
