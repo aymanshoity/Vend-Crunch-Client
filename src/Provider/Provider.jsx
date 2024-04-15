@@ -1,11 +1,11 @@
 "use client"
 import { createContext, useEffect, useState } from "react";
-import { SessionProvider } from "next-auth/react"
 import auth from "@/Firebase/firebase.config";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import UseAxiosPublic from "@/components/Hooks/UseAxiosPublic";
 export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
-    
+    const axiosPublic=UseAxiosPublic()
     const [loading, setLoading] = useState(false)
     const [user, setUser] = useState([])
     const createUser=(email,password)=>{
@@ -23,15 +23,29 @@ const AuthProvider = ({ children }) => {
 
     useEffect(()=>{
         const unSubscribe=onAuthStateChanged(auth,currentUser=>{
-            setLoading(false)
             console.log(currentUser)
             setUser(currentUser)
+            if(currentUser){
+                const userInfo={email:currentUser.email}
+                axiosPublic.post('/jwt',userInfo)
+                .then(res=>{
+                    console.log(res.data)
+                    if(res.data.token){
+                        localStorage.setItem('access-token',res.data.token)
+                    }
+                })
+            }
+            else{
+                localStorage.removeItem('access-token')
+            }
+            setLoading(false)
 
         })
+        
         return () => unSubscribe()
-    },[])
+    },[axiosPublic])
 
-    const userInfo = {user,loading,createUser,userLogin,logOut}
+    const userInfo = {user,loading,createUser,userLogin,logOut,setLoading}
 
     return <AuthContext.Provider value={userInfo}>
         {children}

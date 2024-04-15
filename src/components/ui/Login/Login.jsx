@@ -10,20 +10,22 @@ import Swal from 'sweetalert2'
 import { useForm } from "react-hook-form"
 const Login = () => {
     const router = useRouter()
-    const { user,userLogin } = useContext(AuthContext)
+    const { user, userLogin } = useContext(AuthContext)
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
-    const [error, setError] = useState("")
+    const [error, setError] = useState(" ")
     const onSubmit = (data) => {
         console.log(data)
         userLogin(data.userEmail, data.userPassword)
             .then(result => {
                 console.log(result.user)
-                Swal.fire(`Welcome back ${user.displayName}!!!`);
+                setError(' ')
+                Swal.fire(`Welcome back ${result.user?.displayName}!!!`);
                 router.push('/dashboard/products/allProducts')
 
 
             })
             .catch(error => {
+                console.log(error)
                 setError('Invalid Email/Password')
             })
 

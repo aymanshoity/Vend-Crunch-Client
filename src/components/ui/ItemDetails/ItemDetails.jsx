@@ -75,13 +75,13 @@ const ItemDetails = () => {
     const onSubmit = (data) => {
         console.log(data)
         const item = {
-            productName: data.productName,
-            amount: data.amount,
-            quantity: parseInt(data.quantity),
-            category: data.category,
-            price: parseInt(data.price),
-            brandName: data.brandName,
-            imageURL: data.imageURL
+            productName: data?.productName,
+            amount: data?.amount,
+            quantity: parseInt(data?.quantity),
+            category: data?.category,
+            price: parseInt(data?.price),
+            brandName: data?.brandName,
+            imageURL: data?.imageURL
         };
 
 
@@ -99,6 +99,7 @@ const ItemDetails = () => {
                     console.log(res.data)
                     if(res.data.modifiedCount>0){
                         Swal.fire("Product Updated!", "", "success");
+                        refetch()
                     }
                 })
               

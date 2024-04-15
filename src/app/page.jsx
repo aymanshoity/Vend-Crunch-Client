@@ -1,9 +1,10 @@
+
 import LandingPage from "@/components/ui/LandingPage/LandingPage";
 
 const page = () => {
     return (
         <div>
-            <LandingPage></LandingPage>
+           <LandingPage></LandingPage>
         </div>
     );
 };

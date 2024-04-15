@@ -1,14 +1,13 @@
 
-import { AllFeedbacks } from "@/components/utils/getAllFeedbacks";
+import UsersFeedbacks from "@/components/ui/UsersFeedbacks/UsersFeedbacks";
+
 
 
 const CustomersFeedbacks = async() => {
     
-    const {data:feedbacks}=await AllFeedbacks()
-    console.log(feedbacks)
     return (
         <div>
-            <h1>Lets see the feedbacks {feedbacks?.userName}</h1>
+            <UsersFeedbacks></UsersFeedbacks>
         </div>
     );
 };

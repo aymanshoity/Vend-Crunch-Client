@@ -12,12 +12,13 @@ const ManageCustomer = () => {
         queryKey: ['users'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/users`)
-            console.log(res.data)
-            return res.data
+            const userData=await res.data
+            console.log(userData)
+            return userData
         }
     })
 
-    console.log(users)
+    // console.log(users)
 
     const handleMakeAdmin = (id) => {
         console.log(id)
@@ -101,7 +102,7 @@ const ManageCustomer = () => {
                         {
                             users?.map(user => (
 
-                                <tr key={user._id} className="hover:bg-gray-50 border-b transition duration-300">
+                                <tr key={user?._id} className="hover:bg-gray-50 border-b transition duration-300">
                                     <td className="py-4 px-4 flex justify-start">
                                         <Image width={64} height={64} src={user?.userImage} alt="user image" />
                                     </td>

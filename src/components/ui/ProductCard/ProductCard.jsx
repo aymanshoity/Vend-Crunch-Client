@@ -8,11 +8,11 @@ import UseAxiosPublic from '@/components/Hooks/UseAxiosPublic';
 import { AuthContext } from '@/Provider/Provider';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
+import UseAxiosSecure from '@/components/Hooks/UseAxiosSecure';
 
 const ProductCard = () => {
     const { user } = useContext(AuthContext)
-
-    const axiosPublic = UseAxiosPublic()
+    const axiosSecure=UseAxiosSecure()
     const pathname = usePathname()
     // console.log(pathname)
     const extractedCategory = pathname.split('/').pop();
@@ -22,7 +22,7 @@ const ProductCard = () => {
     const { data: category, refetch } = useQuery({
         queryKey: ['category'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/products/${extractedCategory}`)
+            const res = await axiosSecure.get(`/products/${extractedCategory}`)
             console.log(res.data)
             return res.data
         }
@@ -64,13 +64,13 @@ const ProductCard = () => {
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                axiosPublic.post('/cart', cartData)
+                axiosSecure.post('/cart', cartData)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.insertedId) {
                             Swal.fire("Product Added!", "", "success");
                         } else {
-                            Swal.fire("Product Already Added!", "", "success");
+                            Swal.fire("Product Already Added!...Please Pay the Chosen Product First ");
                         }
                     })
 

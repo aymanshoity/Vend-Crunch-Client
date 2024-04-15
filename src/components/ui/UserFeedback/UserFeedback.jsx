@@ -2,17 +2,17 @@
 import { useContext } from 'react';
 import { AuthContext } from '@/Provider/Provider';
 import Image from 'next/image';
-import UseAxiosPublic from '@/components/Hooks/UseAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import { useForm } from "react-hook-form"
 import Swal from 'sweetalert2'
+import UseAxiosSecure from '@/components/Hooks/UseAxiosSecure';
 const UserFeedback = () => {
     const { user } = useContext(AuthContext)
-    const axiosPublic = UseAxiosPublic()
+    const axiosSecure=UseAxiosSecure()
     const { data: myProfile, refetch } = useQuery({
         queryKey: ['myProfile'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/users/${user?.email}`)
+            const res = await axiosSecure.get(`/users/${user?.email}`)
             console.log(res.data)
             return res.data
         }
@@ -20,9 +20,13 @@ const UserFeedback = () => {
 
     const {register,handleSubmit,reset,formState: { errors },} = useForm()
     
+    const date = new Date().toDateString()
+    const today = date.split(' ');
+    const todaysDate = `${today[1]}. ${today[2]},${today[3]}`;
+
       const onSubmit = (data) => {
         console.log(data)
-        const userImage={userImage: user?.photoURL}
+        const userImage={userImage: user?.photoURL ,date:todaysDate}
         const customerFeedback={...userImage,...data}
         console.log(customerFeedback)
         Swal.fire({
@@ -34,7 +38,7 @@ const UserFeedback = () => {
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                axiosPublic.post('/feedbacks',customerFeedback)
+                axiosSecure.post('/feedbacks',customerFeedback)
                 .then(res=>{
                     console.log(res.data)
                     if(res.data.insertedId){
