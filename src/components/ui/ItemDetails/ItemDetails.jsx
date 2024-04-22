@@ -11,7 +11,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import { useForm } from "react-hook-form"
 const ItemDetails = () => {
     const axiosSecure = UseAxiosSecure()
-    const { user } = useContext(AuthContext)
+    const { user ,loading} = useContext(AuthContext)
     const pathname = usePathname()
     // console.log(pathname)
     const extractedID = pathname.split('/').pop();
@@ -19,6 +19,7 @@ const ItemDetails = () => {
     const [openModal, setOpenModal] = useState(false);
     const { data: item, refetch } = useQuery({
         queryKey: ['item'],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/products/category/${extractedID}`)
             console.log(res.data)

@@ -8,9 +8,10 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2'
 const MyCart = () => {
     const axiosSecure = UseAxiosSecure()
-    const { user } = useContext(AuthContext)
+    const { user,loading } = useContext(AuthContext)
     const { data: myCart, refetch } = useQuery({
         queryKey: ['myCart'],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/cart/${user?.email}`)
             console.log(res.data)

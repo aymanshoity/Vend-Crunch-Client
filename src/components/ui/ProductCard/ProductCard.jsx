@@ -11,7 +11,7 @@ import Link from 'next/link';
 import UseAxiosSecure from '@/components/Hooks/UseAxiosSecure';
 
 const ProductCard = () => {
-    const { user } = useContext(AuthContext)
+    const { user,loading } = useContext(AuthContext)
     const axiosSecure=UseAxiosSecure()
     const pathname = usePathname()
     // console.log(pathname)
@@ -21,6 +21,7 @@ const ProductCard = () => {
 
     const { data: category, refetch } = useQuery({
         queryKey: ['category'],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/products/${extractedCategory}`)
             console.log(res.data)

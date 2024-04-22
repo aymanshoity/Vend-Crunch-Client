@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
 const axiosSecure = axios.create({
-    baseURL:'http://localhost:5000'
-    // baseURL: 'https://vend-crunch-server.vercel.app/'
+    // baseURL:'http://localhost:5000'
+     baseURL: 'https://vend-crunch-server.vercel.app/'
 })
 const UseAxiosSecure = () => {
     const router = useRouter()

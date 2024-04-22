@@ -6,10 +6,14 @@ import PersonIcon from '@mui/icons-material/Person';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from 'sweetalert2'
+import { useContext } from "react";
+import { AuthContext } from "@/Provider/Provider";
 const ManageCustomer = () => {
+    const {loading}=useContext(AuthContext)
     const axiosSecure = UseAxiosSecure()
     const { data: users, refetch } = useQuery({
         queryKey: ['users'],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/users`)
             const userData=await res.data

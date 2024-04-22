@@ -7,15 +7,18 @@ import React, { useContext } from 'react';
 
 const UsersFeedbacks = () => {
     const axiosSecure = UseAxiosSecure()
-    const { user } = useContext(AuthContext)
+    const { user ,loading} = useContext(AuthContext)
     const { data: feedbacks, refetch } = useQuery({
         queryKey: ['feedbacks'],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get('/feedbacks')
             console.log(res.data)
             return res.data
         }
     })
+
+    
     return (
         <div>
             {
@@ -35,9 +38,9 @@ const UsersFeedbacks = () => {
                                 </div>
                                 <div className='divider divider-vertical'></div>
                                 <div>
-                                    <p><span className='font-bold'>Feedback: </span>{feedback?.userFeedback}</p>
-                                    <p className='text-red-600 text-sm'>{feedback?.date}</p>
-                                    <button className='btn'>Resolve</button>
+                                    <p><span className='font-bold mb-2'>Feedback: </span>{feedback?.userFeedback}</p>
+                                    <p className='text-red-600 text-sm mb-2'>{feedback?.date}</p>
+                                    {/* <button onClick={()=>handleResolve(feedback?._id)} className='btn text-white bg-[#412262ff]  hover:bg-[#c07ccaff]  hover:text-white '>Resolve</button> */}
                                 </div>
                             </div>
                         </div>

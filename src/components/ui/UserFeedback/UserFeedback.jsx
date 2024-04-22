@@ -7,10 +7,11 @@ import { useForm } from "react-hook-form"
 import Swal from 'sweetalert2'
 import UseAxiosSecure from '@/components/Hooks/UseAxiosSecure';
 const UserFeedback = () => {
-    const { user } = useContext(AuthContext)
+    const { user ,loading} = useContext(AuthContext)
     const axiosSecure=UseAxiosSecure()
     const { data: myProfile, refetch } = useQuery({
         queryKey: ['myProfile'],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/users/${user?.email}`)
             console.log(res.data)

@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vend Crunch
 
-## Getting Started
+## Vending Machine Management 
 
-First, run the development server:
+### built with Next.js
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+𝐋𝐢𝐯𝐞 𝐋𝐢𝐧𝐤: https://vend-crunch.vercel.app/
+𝐆𝐢𝐭𝐇𝐮𝐛 𝐂𝐥𝐢𝐞𝐧𝐭 𝐋𝐢𝐧𝐤: https://github.com/aymanshoity/Vend-Crunch-Client
+𝐆𝐢𝐭𝐇𝐮𝐛 𝐒𝐞𝐫𝐯𝐞𝐫 𝐋𝐢𝐧𝐤: https://github.com/aymanshoity/Vend-Crunch-Server
 
-## Learn More
+𝐀𝐝𝐦𝐢𝐧 𝐄𝐦𝐚𝐢𝐥: michaelrichard@gmail.com
+𝐀𝐝𝐦𝐢𝐧 𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝: 123456@Aa
 
-To learn more about Next.js, take a look at the following resources:
+This Web Application is built for Single Machine Purchase  and single item for multiple number purchase, specially for students in University to enjoy their 5-10 mins snacks break.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Application of Firebase Authentication System. Customers can register and login using Email-Password and also with their student ID. Student can not register multiple times with similar email ID  Student ID   .
 
-## Deploy on Vercel
+2. JWT Web Token has been implemented to ensure security of the students
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Students can see the categories of food available in the Machine.To see all items user need to be logged in and also filter them out according to the choices.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Students can see the detail of any item and if it is available he/she can add it into his/her cart.This Website is built based single item purchase.Students can purchase signle item for multiple numbers if available.
+
+5. For payment gateway SSlCommerz has been implemented.
+
+6. The most Interesting feature is students can take emergency loan like we do in mobile phones if the balance is not enough.Student can take the loan and can buy the product.He/She has the opportunity to pay the loan after purchase using SSlCommerz. 
+
+7. If a student has already taken an emergency loan he/she won't be able to take another loan until he/she pay the previous loan.Students has the opportunity to provide feedback to the admin.
+
+8. An Admin role has been Implemented. Admin can add a new items, manage students bu deleting or making anyone admin.Additionally, admin can update existing items, check the feedback and can also see the analytics of sold products and loans.
+
+Skills: Next.js · Tailwind CSS · MongoDB · Node.js · Express.js · JSON Web Token (JWT) · Firebase
+
+

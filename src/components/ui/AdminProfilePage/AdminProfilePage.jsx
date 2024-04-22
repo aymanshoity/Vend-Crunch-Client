@@ -6,10 +6,11 @@ import { useQuery } from '@tanstack/react-query';
 import UseAxiosSecure from '@/components/Hooks/UseAxiosSecure';
 
 const AdminProfilePage = () => {
-    const {user}=useContext(AuthContext)
+    const {user ,loading}=useContext(AuthContext)
     const axiosSecure=UseAxiosSecure()
     const { data: myProfile, refetch } = useQuery({
         queryKey: ['myProfile'],
+        enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/users/${user?.email}`)
             console.log(res.data)
