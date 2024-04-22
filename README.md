@@ -8,10 +8,13 @@
 
 
 𝐋𝐢𝐯𝐞 𝐋𝐢𝐧𝐤: https://vend-crunch.vercel.app/
-𝐆𝐢𝐭𝐇𝐮𝐛 𝐂𝐥𝐢𝐞𝐧𝐭 𝐋𝐢𝐧𝐤: https://github.com/aymanshoity/Vend-Crunch-Client
+
+𝐆𝐢𝐭𝐇𝐮𝐛 𝐂𝐥𝐢𝐞𝐧𝐭 𝐋𝐢𝐧𝐤: https://github.com/aymanshoity/Vend-Crunch-
+
 𝐆𝐢𝐭𝐇𝐮𝐛 𝐒𝐞𝐫𝐯𝐞𝐫 𝐋𝐢𝐧𝐤: https://github.com/aymanshoity/Vend-Crunch-Server
 
 𝐀𝐝𝐦𝐢𝐧 𝐄𝐦𝐚𝐢𝐥: michaelrichard@gmail.com
+
 𝐀𝐝𝐦𝐢𝐧 𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝: 123456@Aa
 
 This Web Application is built for Single Machine Purchase  and single item for multiple number purchase, specially for students in University to enjoy their 5-10 mins snacks break.
